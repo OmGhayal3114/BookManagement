@@ -91,3 +91,16 @@ void sort(LL*l)
                 }
         }
 }
+int search(LL*l, char a[])
+{  
+node*p;
+p= p->start;
+while(p!=NULL)
+{
+    if(strcasecmp(p->name, a)==0)
+    return 1;
+    else
+    p=p->next;
+}
+return 0;
+}
