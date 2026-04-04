@@ -5,9 +5,8 @@
 typedef struct node
 {
     char name[N];
-    int id;
+    int id,no;            // nook ID and no. of avability
     float price;
-    int no;
     struct node *next;
 }node;
 typedef struct LL
@@ -69,4 +68,26 @@ void delete(LL *l)
     if(f==0)
     printf("Book is not found");
     
+}
+void sort(LL*l)
+{
+    node*i,*j;
+     node temp;
+    if(l->start==NULL)
+    {
+        printf("\nNo nodes to sort");
+        return;
+    }
+    for(i=l->start;i->next!=NULL;i=i->next)
+        {
+            for(j=l->start;j->next!=NULL;j=j->next)
+                {
+                    if(j->id > j->next->id)
+                    {
+                        temp=*j;
+                        *j=*(j->next);
+                        *(j->next)=temp;
+                    }
+                }
+        }
 }
