@@ -112,6 +112,17 @@ int search(LL *l, char a[])
 
     return 0;             // book not found
 }
+void borrow(LL *l,char name[N])
+{
+    node *p;
+    p=l->start;
+    while(strcasecmp(p->name,name)!=0)
+    {
+        p=p->next;
+    }
+    p->no--;
+    printf("Book is Succesfully Purchased");
+}
 void returnback(LL *l, char a[], int id)
 {
     node *p = l->start;
