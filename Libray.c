@@ -91,22 +91,26 @@ void sort(LL*l)
                 }
         }
 }
-int search(LL*l, char a[])
+int search(LL *l, char a[])
 {  
-node*p;
-p= l->start;
-while(p!=NULL)
-{
-    if(strcasecmp(p->name, a)==0 && (no>0)
+    node *p;
+    p = l->start;
+
+    while (p != NULL)
     {
-    printf("Book details: \nBook name: %[^\n]\tBook id: %d
-    \tNumber of copies: %d",p->name,p->id,p->no);
-    return 1;
+        if (strcasecmp(p->name, a) == 0 && (p->no > 0))
+        {
+            printf("\nBook details:\nBook name: %s\tBook id: %d\tNumber of copies: %d\n",
+                   p->name, p->id, p->no);  
+            return 1;             // Book found
+        }
+        else
+        {
+            p = p->next;
+        }
     }
-    else
-    p=p->next;
-}
-return 0;
+
+    return 0;             // book not found
 }
 void returnback(LL *l, char a[], int id)
 {
