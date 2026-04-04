@@ -3,7 +3,7 @@
 typedef struct node{
   int id,n;         // book id and no. of avability
   float p;          // price of book
-  char a[10];      //array to store name
+  char a[00];      //array to store name
   struct node*next;
 }node;
 typedef struct LL{
