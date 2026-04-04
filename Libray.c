@@ -99,7 +99,7 @@ while(p!=NULL)
 {
     if(strcasecmp((p->name, a)==0) && (no>0))
     {
-    printf("Book details \nBook name: %[^\n]\tBook id: %d
+    printf("Book details: \nBook name: %[^\n]\tBook id: %d
     \tNumber of copies: %d",p->name,p->id,p->no);
     return 1;
     }
@@ -107,4 +107,19 @@ while(p!=NULL)
     p=l->next;
 }
 return 0;
+}
+void returnback(LL *l, char a[], int id)
+{
+    node *p = l->start;
+    while (p != NULL)
+    {
+        if (strcasecmp(p->name, a) == 0)
+        {
+            p->no++;             //  increment the book count
+            printf("\nBook returned successful");
+            return;
+        }
+        p = p->next;
+    }
+    printf("\nThis book is not from library");
 }
