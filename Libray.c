@@ -97,8 +97,12 @@ node*p;
 p= p->start;
 while(p!=NULL)
 {
-    if(strcasecmp(p->name, a)==0)
+    if(strcasecmp((p->name, a)==0) && (no>0))
+    {
+    printf("Book details \nBook name: %[^\n]\tBook id: %d
+    \tNumber of copies: %d",p->name,p->id,p->no);
     return 1;
+    }
     else
     p=l->next;
 }
