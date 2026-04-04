@@ -1,2 +1,11 @@
 #include<stdio.h>
 #include<stdlib.h>
+typedef struct node{
+  int id,n;         // book id and no. of avability
+  float p;          // price of book
+  char a[10];      //array to store name
+  struct node*next;
+}node;
+typedef struct LL{
+  node*start;
+}LL;
