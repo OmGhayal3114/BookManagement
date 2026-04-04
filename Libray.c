@@ -1,0 +1,72 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#define N 100
+typedef struct node
+{
+    char name[N];
+    int id;
+    float price;
+    int no;
+    struct node *next;
+}node;
+typedef struct LL
+{
+    node *start;
+}LL;
+void insert(LL *l,char name[N],int id,float price,int no)
+{
+    node *p,*newrec;
+    newrec = (node*)malloc(sizeof(node));
+    strcpy(newrec->name,name);
+    newrec->id=id;
+    newrec->price=price;
+    newrec->no=no;
+    newrec->next=NULL;
+    if(l->start==NULL)
+    l->start=newrec;
+    else{
+        p=l->start;
+        while (p->next!=NULL)   
+        {
+            p=p->next;
+        }
+        p->next=newrec;
+        
+    }
+}
+void delete(LL *l)
+{
+    char n[N];
+    node *p,*q=NULL;
+    int add,f=0;
+    printf("Enter name of book u want to Remove : ");
+    scanf("%[^\n]",n);
+    
+    p=l->start;
+    while(p!=NULL)
+    {
+        if(strcasecmp(p->name,n)==0)
+        {
+            if(l->start==p)
+            {
+                q=l->start;
+                l->start=NULL;
+            }
+            else{
+                q->next=p->next;
+            }
+            
+            f=1;
+            free(p);
+            printf("Book is Remove Succesfully");
+            break;
+        }
+        q=p;
+        p=p->next;
+        
+    }
+    if(f==0)
+    printf("Book is not found");
+    
+}
