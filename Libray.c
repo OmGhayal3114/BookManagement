@@ -100,7 +100,7 @@ while(p!=NULL)
     if(strcasecmp(p->name, a)==0)
     return 1;
     else
-    p=p->next;
+    p=l->next;
 }
 return 0;
 }
