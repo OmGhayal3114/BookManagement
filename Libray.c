@@ -169,6 +169,7 @@ int main()
     insert(&l,103,"To Kill a Mockingbird","Harper Lee",18.25,3);
     insert(&l,102,"1984","George Orwell",12.50,9);
     insert(&l,104,"The Hobbit","J.R.R. Tolkien",20.00,10);
+    sort(&l);
     display(&l);
     while(1){
         
@@ -196,7 +197,7 @@ int main()
                 insert(&l,id,n,a,p,q);
                 sort(&l);
                 printf("Book is Inserted Succefully!");
-                
+
             }
             break;
         case 2:
@@ -227,10 +228,10 @@ int main()
             {
                 printf("\n1-Borrow the Book\n2-Return the book\nEnter Choice : ");
                 scanf("%d",&x);
-                
+                scanf(" %[^\n]",n);
                 if(x==1)
                 borrow(&l,n);
-                else
+                else if(x==2)
                 returnback(&l,n);
             }
         }
