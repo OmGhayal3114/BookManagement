@@ -116,7 +116,7 @@ int search(LL *l, char a[])
     {
         if (strcasecmp(p->name, a) == 0)
         {
-            printf("\nBook details:\nBook name: %s\nAuthor Name : %s\nBook id: %d\nNumber of copies: %d\n",p->name, p->id, p->no);  
+            printf("\nBook details:\nBook name: %s\nAuthor Name : %s\nBook id: %d\nNumber of copies: %d\n",p->name,p->author, p->id, p->no);  
             return 1;             // Book found
         }
         else
@@ -196,6 +196,7 @@ int main()
                 insert(&l,id,n,a,p,q);
                 sort(&l);
                 printf("Book is Inserted Succefully!");
+                
             }
             break;
         case 2:
